@@ -34,15 +34,13 @@ function Modal({ previewImage, title, setIsOpen }) {
         <div className="modal-blur" ref={modalRef}>
             <div className="modal-blur__container">
                 <div className="modal-blur__header">
-                    <h1>{title}</h1>
-                    <span><CloseIcon /></span>
+                    <h3>{title}</h3>
+                    <span onClick={() => setIsOpen(false)} ><CloseIcon /></span>
                 </div>
-                <hr style={{ width: "100%" }} />
-                <img src={previewImage} alt={previewImage} style={{
-                    objectFit: "contain",
-                    width: "100%",
-                    height: "100%"
-                }} />
+                <hr />
+                <div className='modal-blur__image-container'>
+                    <img src={previewImage} alt={previewImage} />
+                </div>
             </div>
         </div>
     )
